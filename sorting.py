@@ -36,6 +36,8 @@ def bubble_sort(num_list):
 
     for j in range(len(numbers)):
 
+        swapped = False
+
         for i in range(0, len(numbers)-j-1):
 
             index_highlight1 = i
@@ -52,6 +54,15 @@ def bubble_sort(num_list):
 
                 numbers[i], numbers[i+1] = numbers[i+1], numbers[i]
 
+                swapped = True
+
+        if not swapped:
+
+            plt.ioff()
+            plt.show()
+
+            return numbers
+
     plt.ioff()
     plt.show()
 
@@ -59,14 +70,14 @@ def bubble_sort(num_list):
 
 
 if __name__ == "__main__":
-    values = random_numbers(10)
-    # print(values)
-    #
-    # small = random_numbers(5, 0,20)
-    # print(small)
-    #
-    # select_sort = selection_sort(values)
-    # print(select_sort)
+    values = random_numbers(20)
+    print(values)
+
+    small = random_numbers(5, 0,20)
+    print(small)
+
+    select_sort = selection_sort(values)
+    print(select_sort)
 
     bubble = bubble_sort(values)
     print(bubble)
